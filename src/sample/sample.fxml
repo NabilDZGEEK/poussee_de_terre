@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="glissement" />
+          <Menu mnemonicParsing="false" text="renversement" />
+          <Menu mnemonicParsing="false" text="poiçonnement" />
+            <Menu mnemonicParsing="false" text="interne" />
+            <Menu mnemonicParsing="false" text="à propos" />
+            <Menu mnemonicParsing="false" text="aide" />
+        </menus>
+      </MenuBar>
+      <HBox prefHeight="100.0" prefWidth="800">
+         <children>
+
+                     <VBox prefHeight="300.0" prefWidth="400.0">
+                         <children>
+                             <Label text="TYPE DE CALCUL :" underline="true">
+                                 <font>
+                                     <Font name="System Bold" size="18.0" />
+                                 </font>
+                             </Label>
+                             <RadioButton fx:id="radio1" mnemonicParsing="false" text="Actif" />
+                             <RadioButton fx:id="radio2" mnemonicParsing="false" prefWidth="133.0" text="Dynamique" />
+                             <Label text="CHOIX DE LA METHODE :" underline="true">
+                                 <font>
+                                     <Font name="System Bold" size="18.0" />
+                                 </font>
+                             </Label>
+                             <ComboBox fx:id="combo" disable="true" prefWidth="150.0" />
+                             <Label layoutX="10.0" layoutY="10.0" text="  CONDITIONS:" underline="true">
+                                 <font>
+                                     <Font name="System Bold" size="18.0" />
+                                 </font>
+                             </Label>
+                             <CheckBox fx:id="c1" mnemonicParsing="false" text="présence d'eau" />
+                             <CheckBox fx:id="c2" layoutX="10.0" layoutY="149.0" mnemonicParsing="false" text="présence de surcharge " />
+                             <Label layoutX="10.0" layoutY="124.0" text="DONNÉES GEOTECHNIQUES" underline="true">
+                                 <font>
+                                     <Font name="System Bold" size="18.0" />
+                                 </font>
+                             </Label>
+                             <Separator prefWidth="200.0" />
+                             <GridPane>
+                                 <columnConstraints>
+                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="50" minWidth="10.0" prefWidth="50.0" />
+                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="100" minWidth="10.0" prefWidth="50.0" />
+                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                     <Label fx:id="s0" text="φ" GridPane.columnIndex="0" GridPane.columnSpan="1" GridPane.rowIndex="0">
+                                         <font>
+                                             <Font name="System Bold" size="18.0" />
+                                         </font></Label>
+                                     <Label fx:id="s1" text="σ" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                         <font>
+                                             <Font name="System Bold" size="18.0" />
+                                         </font></Label>
+                                     <Label fx:id="s2" text="λ" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                         <font>
+                                             <Font name="System Bold" size="18.0" />
+                                         </font></Label>
+                                     <Label fx:id="s3" text="β" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                         <font>
+                                             <Font name="System Bold" size="18.0" />
+                                         </font></Label>
+                                     <Label fx:id="s4" text="C" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                                         <font>
+                                             <Font name="System Bold" size="18.0" />
+                                         </font></Label>
+                                     <Label fx:id="s5" text="kh" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                                         <font>
+                                             <Font name="System Bold" size="18.0" />
+                                         </font></Label>
+                                     <Label fx:id="s6" text="γ" GridPane.columnIndex="0" GridPane.rowIndex="6">
+                                         <font>
+                                             <Font name="System Bold" size="18.0" />
+                                         </font></Label>
+                                     <Label fx:id="s7" text="H" GridPane.columnIndex="0" GridPane.rowIndex="7">
+                                         <font>
+                                             <Font name="System Bold" size="18.0" />
+                                         </font></Label>
+                                     <Label fx:id="s8" text="γw" GridPane.columnIndex="0" GridPane.rowIndex="8">
+                                         <font>
+                                             <Font name="System Bold" size="18.0" />
+                                         </font></Label>
+                                     <Label fx:id="s9" text="Z" GridPane.columnIndex="0" GridPane.rowIndex="9">
+                                         <font>
+                                             <Font name="System Bold" size="18.0" />
+                                         </font></Label>
+                                     <Label fx:id="s10" text="Q" GridPane.columnIndex="0" GridPane.rowIndex="10">
+                                         <font>
+                                             <Font name="System Bold" size="18.0" />
+                                         </font></Label>
+                                     <TextField fx:id="t0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                     <TextField fx:id="t1" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                     <TextField fx:id="t2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                     <TextField fx:id="t3" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                     <TextField fx:id="t4" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                     <TextField fx:id="t5" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                     <TextField fx:id="t6" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                     <TextField fx:id="t7" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                     <TextField fx:id="t8" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                     <TextField fx:id="t9" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                     <TextField fx:id="t10" GridPane.columnIndex="1" GridPane.rowIndex="10"/>
+                                     <Label text="°" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                                     <Label text="°" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                     <Label text="°" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                     <Label text="°" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                     <Label text="kn/m²" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                     <Label text="\%g" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                     <Label text="kn/m³" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                     <Label text="m" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                     <Label text="kn/m³" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                     <Label text="m" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                                     <Label text="kn" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+
+                                 </children>
+                             </GridPane>
+                             <Separator prefWidth="200.0" />
+
+                         </children></VBox>
+             <VBox prefWidth="400.0">
+                 <children>
+                     <Label text="RESULTAT :" underline="true">
+                         <font>
+                             <Font name="System Bold" size="18.0" />
+                         </font>
+                     </Label>
+                 </children>
+             </VBox>
+            <VBox prefWidth="400.0">
+               <children>
+                  <ImageView fitHeight="300.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+                     <image><Image url="@images/schema.png" /></image>
+                  </ImageView>
+                    <TextArea fx:id="info" editable="false">hcosuhcd</TextArea>
+               </children></VBox>
+
+         </children>
+      </HBox>
+      <HBox minHeight="200.0" minWidth="500.0">
+         <children>
+             <Button fx:id="calculer" minHeight="70" minWidth="300" text="Calculer">               <font>
+                 <Font size="25.0" />
+             </font></Button>
+             <Button minHeight="70" minWidth="300" text="Effacer">
+               <font>
+                  <Font size="25.0" />
+               </font></Button>
+             <Button minHeight="70" minWidth="300" text="Imprimer">               <font>
+                 <Font size="25.0" />
+             </font></Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>
