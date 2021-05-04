@@ -2,13 +2,16 @@ package sample;
 
 public class formule {
 
-    double tan(short deg){
-        return Math.tan(deg*Math.PI/180);
+    protected static double tan(double val){
+        return Math.tan(val*Math.PI/180);
     }
-    double cos(short deg){
-        return Math.cos(deg*Math.PI/180);
+    protected static double cos(double val){
+        return Math.cos(val*Math.PI/180);
     }
-    double sin(short deg){
-        return Math.sin(deg*Math.PI/180);
+    protected static double sin(double val){
+        return Math.sin(val*Math.PI/180);
+    }
+    protected static double carré(double a){
+        return Math.pow(a,2);
     }
 }

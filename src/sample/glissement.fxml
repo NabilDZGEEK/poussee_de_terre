@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <MenuBar fx:id="mb">
+            <menus>
+                <Menu fx:id="m1" mnemonicParsing="false" text="poussée" />
+                <Menu fx:id="m2" mnemonicParsing="false" text="glissement" />
+                <Menu fx:id="m4" mnemonicParsing="false" text="poiçonnement" />
+                <Menu fx:id="m3" mnemonicParsing="false" text="renversement" />
+                <Menu fx:id="m5" mnemonicParsing="false" text="interne" />
+                <Menu fx:id="m6" mnemonicParsing="false" text="à propos" />
+                <Menu fx:id="m7" mnemonicParsing="false" text="aide" />
+            </menus>
+        </MenuBar>
+        <HBox minWidth="300" prefHeight="100.0">
+            <children>
+                <VBox minWidth="400.0">
+                    <children>
+                        <Label text="Calcul du glissement :" underline="true">
+                            <font>
+                                <Font name="System Bold" size="20.0" />
+                            </font>
+                        </Label>
+                        <Label text="Condition du calcul:">                            <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font></Label>
+                        <RadioButton fx:id="radio1" text="condition drainée" />
+                        <RadioButton fx:id="radio2" text="condition non drainée" />
+                        <Label text="Données:">                            <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font></Label>
+                        <GridPane maxWidth="200">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="50" minWidth="10.0" prefWidth="50.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="150" minWidth="70.0" prefWidth="50.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" maxWidth="50.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label text="B" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                                <Label text="φ3k" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                                <Label text="C3k" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                                <Label text="Cu" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                                <Label text="γ" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                                <Label text="γrh" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+
+                                <TextField fx:id="t0" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                                <TextField fx:id="t1" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                                <TextField fx:id="t2" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                                <TextField fx:id="t3" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                                <TextField fx:id="t4" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <TextField fx:id="t5" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                                <Label text="m" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+                                <Label text="°" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+                                <Label text="kpa" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+                                <Label text="kpa" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+                                <Label text="kn/m³" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+                            </children>
+                        </GridPane>
+
+                        <Label text="Resistance au glissement:">                            <font>
+                            <Font name="System Bold" size="18.0" />
+                        </font></Label>
+                        <ImageView fx:id="form_img" fitWidth="300.0" >
+                            <image><Image url="@images/drainnée.png" /></image>
+                        </ImageView>
+
+                        <HBox>
+                            <Label fx:id="vk_label" text="Vk" />
+                            <TextField fx:id="vk" maxWidth="100" />
+                        </HBox>
+                        <HBox>
+                            <Label text="Rd" />
+                            <TextField fx:id="rd" maxWidth="100" />
+                        </HBox>
+                        <HBox>
+                            <ImageView fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                                <image><Image url="@images/condition.png" /></image>
+                            </ImageView>
+                            <Label text="Fs=" />
+                        </HBox>
+                        <HBox>
+                            <Label text="Resultat:" />
+                            <Label text="STABLE" textFill="#19a112">
+                                <font>
+                                    <Font name="System Bold" size="18.0" />
+                                </font>
+                            </Label>
+                        </HBox>
+
+
+                    </children>
+                </VBox>
+                <VBox minWidth="450.0">
+                    <children>
+                        <ImageView fitHeight="300.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+                            <image><Image url="@images/schema.png" /></image>
+                        </ImageView>
+                        <TextArea fx:id="info" editable="false" minHeight="100">hcosuhcd</TextArea>
+                        <ImageView fitHeight="100.0" fitWidth="450.0" pickOnBounds="true" preserveRatio="true">
+                            <image><Image url="@images/logo.png" /></image>
+                        </ImageView>
+                        <ImageView fitHeight="100.0" fitWidth="320.0" pickOnBounds="true" preserveRatio="true">
+                            <image><Image url="@images/contact.png" /></image>
+                        </ImageView>
+                    </children></VBox>
+
+            </children>
+        </HBox>
+        <HBox minHeight="200.0" minWidth="500.0">
+            <children>
+                <Button fx:id="calculer" minHeight="25" minWidth="100" text="Calculer">               <font>
+                    <Font size="20.0" />
+                </font></Button>
+                <Button fx:id="effacer" minHeight="25" minWidth="100" text="Effacer">
+                    <font>
+                        <Font size="20.0" />
+                    </font></Button>
+                <Button minHeight="25" minWidth="100" text="Imprimer">               <font>
+                    <Font size="20.0" />
+                </font></Button>
+            </children>
+        </HBox>
+    </children>
+</VBox>
