@@ -1,7 +1,7 @@
-package sample;
+package Formules;
 
 public class Rpa extends formule{
-    static double calculer(double phi,double beta,double teta ){
+    public static double calculer(double phi,double beta,double teta ){
         double gauche=carré(cos(phi-teta)/cos(teta));
         double racine=0;
         if(phi>beta+teta){

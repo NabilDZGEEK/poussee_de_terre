@@ -1,4 +1,4 @@
-package sample;
+package Formules;
 
 public class formule {
 

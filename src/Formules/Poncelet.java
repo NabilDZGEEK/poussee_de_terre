@@ -1,7 +1,7 @@
-package sample;
+package Formules;
 
 public class Poncelet extends formule{
-    static double calculer(double phi,double sigma,double lambda,double beta){
+    public static double calculer(double phi,double sigma,double lambda,double beta){
         double gauche=carré(sin(lambda-phi))/((carré(sin(lambda))*sin(lambda+sigma)));
         double racine=0;
         if(phi>beta){

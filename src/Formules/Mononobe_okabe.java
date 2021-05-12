@@ -1,7 +1,7 @@
-package sample;
+package Formules;
 
 public class Mononobe_okabe extends formule{
-    static double calculer(double phi,double sigma,double lambda,double beta,double teta){
+    public static double calculer(double phi,double sigma,double lambda,double beta,double teta){
         lambda=180-lambda;
         System.out.println(phi);
         System.out.println(sigma);
