@@ -12,12 +12,13 @@ public class menu extends HBox {
         b[0]=new Button("Accueil");
         b[1]=new Button("Poussée");
         b[2]=new Button("Glissement");
-        b[3]=new Button("Renversement");
-        b[4]=new Button("Poiçonnement");
+        b[3]=new Button("Poiçonnement");
+        b[4]=new Button("Renversement");
         b[5]=new Button("Interne");
-        b[6]=new Button("à propos");
-        b[7]=new Button("Aide");
-        b[8]=new Button("interne2");
+        b[6]=new Button("interne2");
+        b[7]=new Button("à propos");
+        b[8]=new Button("Aide");
+
         this.getChildren().addAll(b);
     }
 }

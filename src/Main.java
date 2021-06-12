@@ -9,7 +9,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         new Cprincipale();
-        primaryStage.setTitle("Poussée des terres");
+        primaryStage.setTitle("MRGA 1.0");
+        primaryStage.setMaximized(true);
         Cprincipale.primaryStage=primaryStage;
         primaryStage.setScene(Chome.getInstance().scene);
         primaryStage.show();

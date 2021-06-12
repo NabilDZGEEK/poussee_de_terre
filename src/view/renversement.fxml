@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Font?>
+<AnchorPane fx:id="v" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <children>
+        <HBox fx:id="mb"/>
+        <HBox layoutX="20" layoutY="50">
+            <children>
+                <VBox minWidth="400">
+                    <children>
+                        <Label styleClass="titre" text="DONNÉES :" underline="true"/>
+                        <HBox>
+                            <children>
+                                <Label text="Vk"/>
+                                <TextField disable="true" fx:id="vk" editable="false" maxWidth="80"/>
+                            </children>
+                        </HBox>
+                        <HBox>
+                            <children>
+                                <Label text="Pa"/>
+                                <TextField disable="true" fx:id="pa" editable="false" maxWidth="80"/>
+                            </children>
+                        </HBox>
+                        <Label styleClass="titre" text="Formules"/>
+                        <ImageView preserveRatio="true">
+                            <image><Image url="@/images/form_renversemment.png" /></image>
+                        </ImageView>
+                    </children>
+                </VBox>
+                <VBox>
+                    <children>
+                        <Label text="RESULTATS :" underline="true">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <HBox>
+                            <Label text="Fs=" />
+                            <TextField fx:id="fs" editable="false" maxWidth="80"/>
+                            <Label fx:id="res" text="" textFill="#a1170e">
+                                <font>
+                                    <Font name="System Bold" size="18.0" />
+                                </font>
+                            </Label>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+    <VBox layoutX="800" minWidth="450.0">
+        <children>
+
+            <ImageView fitHeight="300.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+                <image><Image url="@/images/renversement.png" /></image>
+            </ImageView>
+            <TextArea fx:id="info" editable="false">hcosuhcd</TextArea>
+            <ImageView fitHeight="100.0" fitWidth="450.0" pickOnBounds="true" preserveRatio="true">
+                <image><Image url="@/images/logo.png" /></image>
+            </ImageView>
+            <ImageView fitHeight="100.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                <image><Image url="@/images/contact.png" /></image>
+            </ImageView>
+
+        </children>
+    </VBox>
+</AnchorPane>
+

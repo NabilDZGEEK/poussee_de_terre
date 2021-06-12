@@ -5,7 +5,7 @@ import controller.Cpoussee;
 public class glissement extends formule{
     static public Double[] drainee(double b, double phi3, double c, double y, double yrh){
         Cpoussee cp=Cpoussee.getInstance();
-        double vk=(b* cp.h*y+cp.pa*sin(cp.sigma))*1.35+1.5*cp.q;
+        double vk=b* cp.h*y+cp.pa_non_elu*sin(cp.sigma);
         Double[] res=new Double[2];
         res[0]=1/yrh*Math.min(vk*tan(cp.phi)+b*cp.c,vk*tan(phi3)+b*c);
         res[1]=vk;

@@ -5,203 +5,170 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<VBox fx:id="v" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-       <HBox fx:id="mb">
+<AnchorPane fx:id="v" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HBox fx:id="mb" />
+        <HBox layoutX="20" layoutY="50" minWidth="300">
+            <children>
 
-       </HBox>
-      <HBox minWidth="300" prefHeight="100.0">
-         <children>
+                <VBox prefHeight="300.0" prefWidth="350.0">
+                    <children>
+                        <Label text="TYPE DE CALCUL :" underline="true">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <RadioButton fx:id="radio1" mnemonicParsing="false" text="Actif" />
+                        <RadioButton fx:id="radio2" mnemonicParsing="false" prefWidth="133.0" text="Dynamique" />
+                        <Label text="CHOIX DE LA METHODE :" underline="true">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <ComboBox fx:id="combo" disable="true" prefWidth="150.0" promptText="choisir" />
+                        <Label layoutX="10.0" layoutY="10.0" text="  CONDITIONS:" underline="true">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <CheckBox fx:id="c1" mnemonicParsing="false" text="présence d'eau" />
+                        <CheckBox fx:id="c2" layoutX="10.0" layoutY="149.0" mnemonicParsing="false" text="présence de surcharge " />
+                        <Separator orientation="VERTICAL" prefWidth="50.0" visible="false" />
+                        <Separator maxWidth="300.0"/>
+                        <Separator orientation="VERTICAL" prefWidth="50.0" visible="false" />
+                        <Label layoutX="10.0" layoutY="124.0" text="DONNÉES GEOTECHNIQUES" underline="true">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
 
-                     <VBox prefHeight="300.0" prefWidth="350.0">
-                         <children>
-                             <Label text="TYPE DE CALCUL :" underline="true">
-                                 <font>
-                                     <Font name="System Bold" size="18.0" />
-                                 </font>
-                             </Label>
-                             <RadioButton fx:id="radio1" mnemonicParsing="false" text="Actif" />
-                             <RadioButton fx:id="radio2" mnemonicParsing="false" prefWidth="133.0" text="Dynamique" />
-                             <Label text="CHOIX DE LA METHODE :" underline="true">
-                                 <font>
-                                     <Font name="System Bold" size="18.0" />
-                                 </font>
-                             </Label>
-                             <ComboBox fx:id="combo" disable="true" prefWidth="150.0" />
-                             <Label layoutX="10.0" layoutY="10.0" text="  CONDITIONS:" underline="true">
-                                 <font>
-                                     <Font name="System Bold" size="18.0" />
-                                 </font>
-                             </Label>
-                             <CheckBox fx:id="c1" mnemonicParsing="false" text="présence d'eau" />
-                             <CheckBox fx:id="c2" layoutX="10.0" layoutY="149.0" mnemonicParsing="false" text="présence de surcharge " />
-                             <Label layoutX="10.0" layoutY="124.0" text="DONNÉES GEOTECHNIQUES" underline="true">
-                                 <font>
-                                     <Font name="System Bold" size="18.0" />
-                                 </font>
-                             </Label>
-                             <Separator prefWidth="200.0" />
-                             <GridPane>
-                                 <columnConstraints>
-                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="50" minWidth="10.0" prefWidth="50.0" />
-                                     <ColumnConstraints hgrow="SOMETIMES" maxWidth="100" minWidth="10.0" prefWidth="50.0" />
-                                     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                                 </columnConstraints>
-                                 <rowConstraints>
-                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                     <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                 </rowConstraints>
-                                 <children>
-                                     <Label fx:id="l0" text="φ1" GridPane.columnIndex="0" GridPane.columnSpan="1" GridPane.rowIndex="0">
-                                         <font>
-                                             <Font name="System Bold" size="18.0" />
-                                         </font></Label>
-                                     <Label fx:id="l1" text="σ" GridPane.columnIndex="0" GridPane.rowIndex="1">
-                                         <font>
-                                             <Font name="System Bold" size="18.0" />
-                                         </font></Label>
-                                     <Label fx:id="l2" text="λ" GridPane.columnIndex="0" GridPane.rowIndex="2">
-                                         <font>
-                                             <Font name="System Bold" size="18.0" />
-                                         </font></Label>
-                                     <Label fx:id="l3" text="β" GridPane.columnIndex="0" GridPane.rowIndex="3">
-                                         <font>
-                                             <Font name="System Bold" size="18.0" />
-                                         </font></Label>
-                                     <Label fx:id="l4" text="C1" GridPane.columnIndex="0" GridPane.rowIndex="4">
-                                         <font>
-                                             <Font name="System Bold" size="18.0" />
-                                         </font></Label>
-                                     <Label fx:id="l5" text="kh" GridPane.columnIndex="0" GridPane.rowIndex="5">
-                                         <font>
-                                             <Font name="System Bold" size="18.0" />
-                                         </font></Label>
-                                     <Label fx:id="l6" text="γ1" GridPane.columnIndex="0" GridPane.rowIndex="6">
-                                         <font>
-                                             <Font name="System Bold" size="18.0" />
-                                         </font></Label>
-                                     <Label fx:id="l7" text="H" GridPane.columnIndex="0" GridPane.rowIndex="7">
-                                         <font>
-                                             <Font name="System Bold" size="18.0" />
-                                         </font></Label>
-                                     <Label fx:id="l8" text="γw" GridPane.columnIndex="0" GridPane.rowIndex="8">
-                                         <font>
-                                             <Font name="System Bold" size="18.0" />
-                                         </font></Label>
-                                     <Label fx:id="l9" text="Z" GridPane.columnIndex="0" GridPane.rowIndex="9">
-                                         <font>
-                                             <Font name="System Bold" size="18.0" />
-                                         </font></Label>
-                                     <Label fx:id="l10" text="Q" GridPane.columnIndex="0" GridPane.rowIndex="10">
-                                         <font>
-                                             <Font name="System Bold" size="18.0" />
-                                         </font></Label>
-                                     <TextField fx:id="t0" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                                     <TextField fx:id="t1" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                                     <TextField fx:id="t2" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                                     <TextField fx:id="t3" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                                     <TextField fx:id="t4" disable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                                     <TextField fx:id="t5" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                                     <TextField fx:id="t6" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                                     <TextField fx:id="t7" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                                     <TextField fx:id="t8" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="8" />
-                                     <TextField fx:id="t9" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
-                                     <TextField fx:id="t10" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="10" />
-                                     <Label text="°" GridPane.columnIndex="2" GridPane.rowIndex="0" />
-                                     <Label text="°" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                                     <Label text="°" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                                     <Label text="°" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                                     <Label text="kn/m²" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                                     <Label text="\%g" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                                     <Label text="kn/m³" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                                     <Label text="m" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                                     <Label text="kn/m³" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                                     <Label text="m" GridPane.columnIndex="2" GridPane.rowIndex="9" />
-                                     <Label text="kn" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                        <GridPane>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="40" minWidth="10.0" prefWidth="50.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="70" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            </rowConstraints>
+                            <children>
+                                <Label fx:id="l0" styleClass="symbole" text="φ1" GridPane.columnIndex="0" GridPane.columnSpan="1" GridPane.rowIndex="0" />
+                                <Label fx:id="l1" styleClass="symbole" text="σ" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <Label fx:id="l2" styleClass="symbole" text="λ" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                <Label fx:id="l3" styleClass="symbole" text="β" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                <Label fx:id="l4" styleClass="symbole" text="C1" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                                <Label fx:id="l5" styleClass="symbole" text="kh" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                                <Label fx:id="l6" styleClass="symbole" text="γ1" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+                                <Label fx:id="l7" styleClass="symbole" text="H" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                                <Label fx:id="l8" styleClass="symbole" text="γw" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                                <Label fx:id="l9" styleClass="symbole" text="Z" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                                <Label fx:id="l10" styleClass="symbole" text="Q" GridPane.columnIndex="0" GridPane.rowIndex="10" />
 
-                                 </children>
-                             </GridPane>
-                             <Separator prefWidth="200.0" />
+                                <TextField fx:id="t0" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                <TextField fx:id="t1" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <TextField fx:id="t2" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <TextField fx:id="t3" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <TextField fx:id="t4" disable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <TextField fx:id="t5" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                <TextField fx:id="t6" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                <TextField fx:id="t7" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                <TextField fx:id="t8" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                <TextField fx:id="t9" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                                <TextField fx:id="t10" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                <Label text="°" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                                <Label text="°" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                <Label text="°" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                <Label text="°" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                <Label text="kn/m²" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                <Label text="\%g" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                                <Label text="kn/m³" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                <Label text="m" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                <Label text="kn/m³" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                <Label text="m" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                                <Label text="kn" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                            </children>
+                        </GridPane>
 
-                         </children>
-                     </VBox>
-             <VBox prefWidth="300.0">
-                 <children>
-                     <Label text="RESULTATS :" underline="true">
-                         <font>
-                             <Font name="System Bold" size="18.0" />
-                         </font>
-                     </Label>
-                     <GridPane>
-                         <columnConstraints>
-                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="100" minWidth="10.0" prefWidth="50.0" />
-                             <ColumnConstraints hgrow="SOMETIMES" maxWidth="100" minWidth="10.0" prefWidth="50.0" />
-                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                         </columnConstraints>
-                         <rowConstraints>
-                             <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                             <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                             <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                        <RowConstraints />
-                        <RowConstraints />
-                         </rowConstraints>
-                         <children>
-                             <Label text="ka+" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-                             <Label text="ka-" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-                             <Label text="pa+" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                             <Label text="pa-" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                             <Label text="pa(ELU)" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                             <TextField fx:id="kap" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-                             <TextField fx:id="kam" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                             <TextField fx:id="pap" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                             <TextField fx:id="pam" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                             <TextField fx:id="paelu" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-                             <Label text="kn" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                             <Label text="kn" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                             <Label text="kn" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-                         </children>
-                     </GridPane>
-                 </children>
-             </VBox>
-            <VBox minWidth="450.0">
-               <children>
 
-                  <ImageView fitHeight="300.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
-                     <image><Image url="@/images/schema.png" /></image>
-                  </ImageView>
-                    <TextArea fx:id="info" editable="false">hcosuhcd</TextArea>
-                   <ImageView fitHeight="100.0" fitWidth="450.0" pickOnBounds="true" preserveRatio="true">
-                       <image><Image url="@/images/logo.png" /></image>
-                   </ImageView>
-                   <ImageView fitHeight="100.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
-                       <image><Image url="@/images/contact.png" /></image>
-                   </ImageView>
+                    </children>
+                </VBox>
+                <VBox maxWidth="300.0">
+                    <children>
+                        <Label text="RESULTATS :" underline="true">
+                            <font>
+                                <Font name="System Bold" size="18.0" />
+                            </font>
+                        </Label>
+                        <GridPane>
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="80.0" />
+                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="70" />
+                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                <RowConstraints />
+                                <RowConstraints />
+                            </rowConstraints>
+                            <children>
+                                <Label styleClass="symbole" text="ka+" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <Label styleClass="symbole" text="ka-" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <Label styleClass="symbole" text="pa+" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                <Label styleClass="symbole" text="pa-" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                                <Label styleClass="symbole" text="pa(ELU)" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                                <TextField fx:id="kap" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                <TextField fx:id="kam" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <TextField fx:id="pap" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <TextField fx:id="pam" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <TextField fx:id="paelu" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <Label text="kn" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                <Label text="kn" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                <Label text="kn" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
 
-               </children></VBox>
-
-         </children>
-      </HBox>
-      <HBox minHeight="200.0" minWidth="500.0">
-         <children>
-             <Button fx:id="calculer" minHeight="25" minWidth="100" text="Calculer">
-                 <font><Font size="15.0" /></font>
-             </Button>
-             <Button fx:id="effacer" minHeight="25" minWidth="100" text="Effacer">
-                 <font><Font size="15.0" /></font>
-             </Button>
-             <Button minHeight="25" minWidth="100" text="Imprimer">
-                 <font><Font size="15.0" /></font>
-             </Button>
-         </children>
-      </HBox>
-   </children>
-</VBox>
+            </children>
+        </HBox>
+        <VBox layoutY="50" layoutX="800" minWidth="400.0">
+            <children>
+                <ImageView fitHeight="300.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true">
+                    <image><Image url="@/images/schema.png" /></image>
+                </ImageView>
+                <TextArea fx:id="info" editable="false">hcosuhcd</TextArea>
+                <ImageView fitHeight="100.0" fitWidth="450.0" pickOnBounds="true" preserveRatio="true">
+                    <image><Image url="@/images/logo.png" /></image>
+                </ImageView>
+                <ImageView fitHeight="100.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true">
+                    <image><Image url="@/images/contact.png" /></image>
+                </ImageView>
+            </children>
+        </VBox>
+        <HBox layoutY="710">
+            <children>
+                <Button fx:id="calculer" defaultButton="true" minHeight="25" minWidth="100" text="Calculer">
+                    <font><Font size="15.0" /></font>
+                </Button>
+                <Button fx:id="effacer" minHeight="25" minWidth="100" text="Effacer">
+                    <font><Font size="15.0" /></font>
+                </Button>
+                <Button minHeight="25" minWidth="100" text="Imprimer">
+                    <font><Font size="15.0" /></font>
+                </Button>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

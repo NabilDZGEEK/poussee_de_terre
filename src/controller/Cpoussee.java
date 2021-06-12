@@ -3,6 +3,7 @@ import Formules.*;
 import javafx.beans.binding.Bindings;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
@@ -24,7 +25,7 @@ public class Cpoussee extends Controller{
     public static Cpoussee getInstance() {
         return instance;
     }
-    public double phi=0,sigma=0,c=0,h=0,q=0,pa=0;
+    public double phi=0,sigma=0,c=0,gama=0,h=0,q=0,pa_non_elu=0,pa=0;
     private Button calculer,effacer,imprimer;
 
     private char etat;//"statique ou dynamique
@@ -144,30 +145,30 @@ public class Cpoussee extends Controller{
                 }
             }
         });
-        calculer.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        calculer.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(MouseEvent mouseEvent) {
+            public void handle(ActionEvent actionEvent) {
                 double[] tt= new double[11];//valeurs de données
                 double kapv=0,kamv = 0;//resultat ka
                 double papv=0,pamv=0;//resultat pa
                 double paeluv=0;//resultat pa(elu)
                 tt[0]=Double.parseDouble(t[0].getText());phi=tt[0];
-                tt[6]=Double.parseDouble(t[6].getText());
+                tt[6]=Double.parseDouble(t[6].getText());gama=tt[6];
                 tt[7]=Double.parseDouble(t[7].getText());h=tt[7];
                 if(etat=='s'){//static
                     switch (rang){
                         case 0:
-                                kapv=rankine.calculer(tt[0]);break;
+                            kapv=rankine.calculer(tt[0]);break;
                         case 1:
-                                tt[1]=Double.parseDouble(t[1].getText());
-                                tt[2]=Double.parseDouble(t[2].getText());sigma=tt[2];
-                                tt[3]=Double.parseDouble(t[3].getText());
-                                kapv=Poncelet.calculer(tt[0],tt[1],tt[2],tt[3]);break;
+                            tt[1]=Double.parseDouble(t[1].getText());sigma=tt[1];
+                            tt[2]=Double.parseDouble(t[2].getText());
+                            tt[3]=Double.parseDouble(t[3].getText());
+                            kapv=Poncelet.calculer(tt[0],tt[1],tt[2],tt[3]);break;
                         case 2:
-                                tt[1]=Double.parseDouble(t[1].getText());
-                                tt[2]=Double.parseDouble(t[2].getText());sigma=tt[2];
-                                tt[3]=Double.parseDouble(t[3].getText());
-                                kapv=Coulomb.calculer(tt[0],tt[1],tt[2],tt[3]);
+                            tt[1]=Double.parseDouble(t[1].getText());sigma=tt[1];
+                            tt[2]=Double.parseDouble(t[2].getText());
+                            tt[3]=Double.parseDouble(t[3].getText());
+                            kapv=Coulomb.calculer(tt[0],tt[1],tt[2],tt[3]);
                     }
                     kamv=kapv;
                 }else{
@@ -178,23 +179,24 @@ public class Cpoussee extends Controller{
                     teta_neg=Math.atan(tt[5]/(1-1/3*tt[5]))*180/Math.PI;
                     switch (rang){
                         case 0:kapv=Rpa.calculer(tt[0],tt[3],teta_pos);
-                               kamv=Rpa.calculer(tt[0],tt[3],teta_neg);
-                               break;
-                        case 1: tt[1]=Double.parseDouble(t[1].getText());
-                                tt[2]=Double.parseDouble(t[2].getText());sigma=tt[2];
-                                kapv=Mononobe_okabe.calculer(tt[0],tt[1],tt[2],tt[3],teta_pos);
-                                kamv=Mononobe_okabe.calculer(tt[0],tt[1],tt[2],tt[3],teta_neg);
+                            kamv=Rpa.calculer(tt[0],tt[3],teta_neg);
+                            break;
+                        case 1: tt[1]=Double.parseDouble(t[1].getText());sigma=tt[1];
+                            tt[2]=Double.parseDouble(t[2].getText());
+                            kapv=Mononobe_okabe.calculer(tt[0],tt[1],tt[2],tt[3],teta_pos);
+                            kamv=Mononobe_okabe.calculer(tt[0],tt[1],tt[2],tt[3],teta_neg);
                     }
                 }
 
-                kap.setText(Double.toString(kapv));
-                kam.setText(Double.toString(kamv));
+                kap.setText(formatter.format(kapv));
+                kam.setText(formatter.format(kamv));
                 double paeluvp=0,paeluvm=0;//pa(elu)+,pa(elu)-
                 try{
                     double cp=(tt[4]/Math.tan(tt[0]*Math.PI/180))*(1-kapv*Math.cos(tt[1]*Math.PI/180));
                     double cm=(tt[4]/Math.tan(tt[0]*Math.PI/180))*(1-kamv*Math.cos(tt[1]*Math.PI/180));
                     papv=0.5*kapv*tt[6]*tt[7]*tt[7]-cp;
                     pamv=0.5*kamv*tt[6]*tt[7]*tt[7]-cm;
+
                     if(t[8].getText()!=""&t[9].getText()!="") {
                         try {
                             tt[8] = Double.parseDouble(t[8].getText());
@@ -205,6 +207,7 @@ public class Cpoussee extends Controller{
                             System.err.println("erreur format");
                         }
                     }
+                    pa_non_elu=Math.max(papv,pamv);
                     paeluvp=papv*1.35;
                     paeluvm=pamv*1.35;
                     if(t[10].getText()!=""){
@@ -220,18 +223,18 @@ public class Cpoussee extends Controller{
                         }
                     }
 
-                    pap.setText(Double.toString(papv));
-                    pam.setText(Double.toString(pamv));
+                    pap.setText(formatter.format(papv));
+                    pam.setText(formatter.format(pamv));
                     paeluv=Math.max(paeluvp,paeluvm);//max(pa(elu)+,pa(elu)-)
                     TextField paelu=(TextField)scene.lookup("#paelu");
-                    paelu.setText(String.valueOf(paeluv));
+                    paelu.setText(formatter.format(paeluv));
                     pa=paeluv;
                 }catch(NumberFormatException x){
                     System.err.println("vous devez saisir tt4 et tt0");
                 }
-
             }
         });
+
     }
 
 }

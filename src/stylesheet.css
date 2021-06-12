@@ -1,0 +1,19 @@
+.button {
+
+   -fx-background-color : #d5d8de;
+   -fx-border-radius : 10px;
+   -fx-background-radius : 0px;
+}
+.button:hover {
+    -fx-border-color: #4b79c4 ;
+ }
+ .symbole{
+   -fx-font-size: 18;
+ }
+ .titre{
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+ }
+ .donnee{
+    -fx-pref-width:70;
+ }

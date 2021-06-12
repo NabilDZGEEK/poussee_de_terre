@@ -1,11 +1,10 @@
 package controller;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
 import Formules.interne;
 import java.io.IOException;
 
@@ -24,8 +23,8 @@ public class Cinterne extends Controller{
         return instance;
     }
     Cinterne() throws IOException {
-        super("interne.fxml",4);
-       /* ToggleGroup g1 = new ToggleGroup();
+        super("interne.fxml",5);
+        ToggleGroup g1 = new ToggleGroup();
         ToggleGroup g2 = new ToggleGroup();
         ToggleGroup g3 = new ToggleGroup();
         GridPane gp1= (GridPane) scene.lookup("#g1");
@@ -76,9 +75,9 @@ public class Cinterne extends Controller{
         TextField rtd= (TextField) scene.lookup("#rtd");
         TextField rtk=(TextField) scene.lookup("#rtk");
         Button calculer=(Button) scene.lookup("#calculer");
-        calculer.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        calculer.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(MouseEvent mouseEvent) {
+            public void handle(ActionEvent actionEvent) {
                 RadioButton b;
                 b= (RadioButton) g1.getSelectedToggle();
                 Double pend=Double.parseDouble(b.getText());
@@ -90,6 +89,6 @@ public class Cinterne extends Controller{
                 Double res=interne.calcul(pend,pflu,pdeg,rtkv);
                 rtd.setText(res.toString());
             }
-        });*/
+        });
     }
 }
